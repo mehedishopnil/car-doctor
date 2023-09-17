@@ -1,0 +1,31 @@
+.card-content-body {
+  border-radius: 0px;
+  border: 1px solid rgb(228, 228, 228);
+
+  -webkit-box-shadow: 1px 1px 13px -8px rgba(138,138,138,0.55);
+  -moz-box-shadow: 1px 1px 13px -8px rgba(138,138,138,0.55);
+  box-shadow: 1px 1px 13px -8px rgba(138,138,138,0.55);
+}
+.card-body img {
+  padding: 0px;
+  height: 208px;
+  border-radius: 5px;
+}
+
+.card-info {
+  height: 100px;
+  padding: 20px;
+}
+.card-icon {
+  display: flex;
+  justify-content: end;
+}
+
+.card-icon a {
+  font-size: 20px;
+  color: #ff3811;
+}
+
+.card-icon a:hover {
+  color: green;
+}
