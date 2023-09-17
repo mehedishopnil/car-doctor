@@ -1,34 +1,31 @@
-import { Link } from 'react-router-dom';
-import signUpImage from '../../assets/images/login/login.svg'
-import { useContext } from 'react';
-import { AuthContext } from '../../providers/AuthProvider';
+import { Link } from "react-router-dom";
+import signUpImage from "../../assets/images/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
+  const { createUser } = useContext(AuthContext);
 
-    const {createUser} = useContext(AuthContext)
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-    const handleSignUp = event =>{
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
+    const totalValue = { name, email, password };
+    console.log(totalValue);
 
-        const totalValue = {name, email, password};
-        console.log(totalValue);
-
-        createUser (email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .then(error => console.log(error))
-
-
-    }
-    return (
-        <div>
-            <div className=" py-16 bg-base-200">
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+  return (
+    <div>
+      <div className=" py-16 bg-base-200">
         <div className="pb-12">
           <h1 className="text-5xl text-center font-bold">Sign Up now!</h1>
         </div>
@@ -40,7 +37,6 @@ const SignUp = () => {
 
           <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-
               <form onSubmit={handleSignUp}>
                 <div className="form-control">
                   <label className="label">
@@ -91,14 +87,19 @@ const SignUp = () => {
               </form>
 
               <div>
-                <p className="my-4 text-center">Already have an account? <Link className="text-[#ff3811] font-bold" to='/logIn'>Log In</Link></p>
+                <p className="my-4 text-center">
+                  Already have an account?{" "}
+                  <Link className="text-[#ff3811] font-bold" to="/logIn">
+                    Log In
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default SignUp;
