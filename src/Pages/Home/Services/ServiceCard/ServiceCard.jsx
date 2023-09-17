@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
         </figure>
         <div className=" card-info ">
           <h2 className="card-title text-2xl">{title}</h2>
-          <p className="text-xl font-bold text-[#FF3811]">Price: ${price}</p>
+          <p className=" font-bold text-[#FF3811]">Price: ${price}</p>
           <div className=" card-icon">
             
             <a href="">

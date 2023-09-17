@@ -22,7 +22,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className=" navbar bg-base-100 h-28 mb-8">
+    <div className=" navbar bg-base-100  mb-2">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,8 +55,9 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
-      <div className="navbar-end">
-        <Link ><button className="btn btn-outline btn-warning">Appointment</button></Link>
+      <div className="navbar-end gap-5">
+        <Link to='/logIn'><p className="font-bold text-[#ff3811]">LogIn</p></Link>
+        <Link ><button className="btn btn-outline w- border-[#ff3811] text-[#ff3811]">Appointment</button></Link>
       </div>
     </div>
   );

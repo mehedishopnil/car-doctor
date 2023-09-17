@@ -1,28 +1,59 @@
-import { Link } from "react-router-dom";
-import loginImage from "../../assets/images/login/login.svg";
+import { Link } from 'react-router-dom';
+import signUpImage from '../../assets/images/login/login.svg'
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
-const Login = () => {
+const SignUp = () => {
 
-    const handleLogin = event =>{
+    const {createUser} = useContext(AuthContext)
+
+    const handleSignUp = event =>{
         event.preventDefault();
-    }
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
 
-  return (
-    <div>
-      <div className=" py-16 bg-base-200">
+        const totalValue = {name, email, password};
+        console.log(totalValue);
+
+        createUser (email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .then(error => console.log(error))
+
+
+    }
+    return (
+        <div>
+            <div className=" py-16 bg-base-200">
         <div className="pb-12">
-          <h1 className="text-5xl text-center font-bold">Login now!</h1>
+          <h1 className="text-5xl text-center font-bold">Sign Up now!</h1>
         </div>
 
         <div className="grid grid-cols-2 space-x-5">
           <div className=" flex justify-end ">
-            <img className="w-1/2" src={loginImage} alt="" />
+            <img className="w-1/2" src={signUpImage} alt="" />
           </div>
 
           <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
 
-              <form onSubmit={handleLogin}>
+              <form onSubmit={handleSignUp}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Your Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    className="input input-bordered"
+                  />
+                </div>
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -54,20 +85,20 @@ const Login = () => {
                   <input
                     className="btn btn-primary border-none bg-[#ff3811] text-white"
                     type="submit"
-                    value="login"
+                    value="Sign Up"
                   />
                 </div>
               </form>
 
               <div>
-                <p className="my-4 text-center">New to Car Doctors? <Link className="text-[#ff3811] font-bold" to='/signUp'>Sign Up</Link></p>
+                <p className="my-4 text-center">Already have an account? <Link className="text-[#ff3811] font-bold" to='/logIn'>Log In</Link></p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default Login;
+export default SignUp;

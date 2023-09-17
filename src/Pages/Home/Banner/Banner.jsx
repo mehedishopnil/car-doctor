@@ -21,8 +21,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+                <button className="btn btn-primary bg-[#ff3811] mr-5">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white">
                   Latest Project
                 </button>
               </div>
@@ -30,10 +30,10 @@ const Banner = () => {
           </div>
 
           <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-            <a href="#slide6" className="btn btn-circle mr-5">
+            <a href="#slide6" className="btn btn-circle mr-5 bg-[#ff3811] text-white">
               ❮
             </a>
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide2" className="btn btn-circle bg-[#ff3811] text-white">
               ❯
             </a>
           </div>
