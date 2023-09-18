@@ -17,7 +17,7 @@ const ServiceCard = ({ service }) => {
 
           <div className=" card-icon">
             
-            <Link className="btn-text-icon " to={`/checkout/${_id}`}>
+            <Link className="btn-text-icon " to={`/book/${_id}`}>
               <button className="book-now-btn flex gap-1  ">
               <p className="text-sm ">Book Now</p>
               <p className=" mt-1"><FaArrowCircleRight /></p>

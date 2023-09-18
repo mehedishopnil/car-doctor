@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
+
+  const {user} = useContext(AuthContext);
+
+
   const navItems = (
     <>
       <li>
@@ -14,10 +20,10 @@ const Header = () => {
         <Link to='/services' href="">Services</Link>
       </li>
       <li>
-        <Link to='/' href="">Blog</Link>
+        <Link to='' href="">Blog</Link>
       </li>
       <li>
-        <Link to='/' href="">Contact</Link>
+        <Link to='' href="">Contact</Link>
       </li>
     </>
   );
