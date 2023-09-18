@@ -1,5 +1,6 @@
 import { FaArrowCircleRight } from "react-icons/fa";
 import './ServiceCard.css'
+import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ service }) => {
@@ -13,11 +14,16 @@ const ServiceCard = ({ service }) => {
         <div className=" card-info ">
           <h2 className="card-title text-2xl">{title}</h2>
           <p className=" font-bold text-[#FF3811]">Price: ${price}</p>
+
           <div className=" card-icon">
             
-            <a href="">
-              <FaArrowCircleRight />
-            </a>
+            <Link className="btn-text-icon " to={`/checkout/${_id}`}>
+              <button className="book-now-btn flex gap-1  ">
+              <p className="text-sm ">Book Now</p>
+              <p className=" mt-1"><FaArrowCircleRight /></p>
+              </button>
+            </Link>
+
           </div>
         </div>
       </div>
