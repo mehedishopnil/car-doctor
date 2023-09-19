@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import loginImage from "../../assets/images/login/login.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [successful, setSuccessful] = useState(false);
   const { signIn } = useContext(AuthContext);
 
   const handleLogin = (event) => {
@@ -16,6 +17,11 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        if (user) {
+          setSuccessful(true);
+          alert("Successfully Logged In ");
+          form.reset();
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -34,7 +40,6 @@ const Login = () => {
 
           <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-
               <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <label className="label">
@@ -80,6 +85,9 @@ const Login = () => {
                   </Link>
                 </p>
               </div>
+              { successful && (
+                <p className="text-center text-sm text-green-600">Successfully logged In</p>
+              )}
             </div>
           </div>
         </div>

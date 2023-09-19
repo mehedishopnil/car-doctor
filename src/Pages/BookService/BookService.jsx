@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const BookService = () => {
+    const [successful, setSuccessful] = useState(false);
     const services = useLoaderData();
   const { title, price,img, service_id } = services;
   const {user} = useContext(AuthContext);
@@ -42,6 +43,8 @@ const BookService = () => {
             console.log(data);
             if(data.insertedId){
                 alert('service book successfully')
+                setSuccessful(true);
+                form.reset();
             }
         })
     }
@@ -131,6 +134,10 @@ const BookService = () => {
                 />
 
               </div>
+              { successful && (
+                <p className="text-center text-sm mt-3 text-green-600">Successfully Order Confirmed</p>
+              )
+              }
             </div>
           </div>
         </div>

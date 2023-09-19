@@ -70,7 +70,10 @@ const Header = () => {
       <div className="navbar-end gap-5">
         {
           user?.email? 
-          <Link to=''><button onClick={handleLogOut} className="font-bold text-[#ff3811]">LogOut</button></Link>:
+          <>
+          <Link to='/bookings'><button  className="font-bold text-[#ff3811]">My Bookings</button ></Link>
+          <Link to=''><button onClick={handleLogOut} className="font-bold text-[#ff3811]">LogOut</button></Link>
+          </>:
           <Link to='/logIn'><button  className="font-bold text-[#ff3811]">LogIn</button ></Link>
         }
 

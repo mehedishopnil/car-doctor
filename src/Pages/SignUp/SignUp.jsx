@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import signUpImage from "../../assets/images/login/login.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
+  const [successful, setServices] = useState(true)
   const { createUser } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
@@ -20,6 +21,11 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        if(user){
+          alert('Congratulation! You are a Member of CarDoctor');
+          setServices(true);
+          form.reset();
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -94,6 +100,9 @@ const SignUp = () => {
                   </Link>
                 </p>
               </div>
+              { successful && (
+                <p className="text-center text-sm text-green-600">Successfully Sign Up</p>
+              )}
             </div>
           </div>
         </div>
