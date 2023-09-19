@@ -20,8 +20,8 @@ const Bookings = () => {
 
   return (
     <div className="container mx-auto my-20">
-      <div>
-        <h1 className="text-center pb-8 text-2xl font-semibold">
+      <div className=" flex justify-center">
+        <h1 className="text-center w-1/3 mb-8 py-2 rounded-3xl text-2xl text-white font-semibold bg-[#ff6543]">
           Your Total Bookings: {bookings.length}
         </h1>
       </div>
@@ -29,10 +29,10 @@ const Bookings = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-sm text-[#ff3811]">
-              <th>CheckBox</th>
+            <tr className="text-sm rounded bg-[#feeeea] text-[#ff3811]">
+              <th></th>
               <th>Image</th>
-              <th>Name</th>
+              <th>Service Name</th>
               <th>Price</th>
               <th>Date</th>
               <th>Condition</th>
