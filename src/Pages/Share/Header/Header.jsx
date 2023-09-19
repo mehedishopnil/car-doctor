@@ -5,7 +5,13 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
 
-  const {user} = useContext(AuthContext);
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+    .then(()=>{})
+    .catch(error => console.log(error))
+  }
 
 
   const navItems = (
@@ -62,7 +68,12 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end gap-5">
-        <Link to='/logIn'><p className="font-bold text-[#ff3811]">LogIn</p></Link>
+        {
+          user?.email? 
+          <Link to=''><button onClick={handleLogOut} className="font-bold text-[#ff3811]">LogOut</button></Link>:
+          <Link to='/logIn'><button  className="font-bold text-[#ff3811]">LogIn</button ></Link>
+        }
+
         <Link ><button className="btn btn-outline w- border-[#ff3811] text-[#ff3811]">Appointment</button></Link>
       </div>
     </div>

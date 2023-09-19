@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import loginImage from "../../assets/images/login/login.svg";
-import { createContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const { signIn } = createContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
-    const email = form.name.value;
-    const password = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
     signIn(email, password)
       .then((result) => {
@@ -34,6 +34,7 @@ const Login = () => {
 
           <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
+
               <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <label className="label">
