@@ -77,7 +77,7 @@ const Header = () => {
           <Link to='/logIn'><button  className="font-bold text-[#ff3811]">LogIn</button ></Link>
         }
 
-        <Link ><button className="btn btn-outline w- border-[#ff3811] text-[#ff3811]">Appointment</button></Link>
+        <Link ><button className="btn btn-outline w- border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:border-none">Appointment</button></Link>
       </div>
     </div>
   );

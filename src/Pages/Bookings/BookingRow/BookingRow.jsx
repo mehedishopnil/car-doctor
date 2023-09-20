@@ -1,17 +1,19 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
-const BookingRow = ({ booking }) => {
-  const { customerName, email, service, price, date, img } = booking;
+const BookingRow = ({ booking, handleDelete, handleBookingConfirm }) => {
+  const {_id, customerName, email, service, price, date, img, status } = booking;
+
+  
   return (
     <tbody className=" bg-[#fff9f8ae]">
       <tr className="border-[#ffd2c9]">
         <th>
           <label>
-            <button className="btn btn-circle border-[#ffbbad] bg-white text-[#ff5b3a] hover:bg-[#ff3811] hover:text-white">
+            <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-sm font-semibold border-[#ffbbad] bg-white text-[#ff5b3a] hover:bg-[#ff3811] hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -50,11 +52,14 @@ const BookingRow = ({ booking }) => {
           <p className="text-xs font-semibold">{date}</p>
         </td>
         <td>
-          <Link>
-            <button className=" h-8 w-16 rounded text-white bg-[#ff3811] hover:bg-[#e13e1d]">
-              Pending
+          {
+            status === 'confirm'  ? <span className="font-bold text-success"> Confirmed </span>:
+            <Link>
+            <button onClick={() => handleBookingConfirm(_id)} className=" h-8 w-28 rounded text-white bg-[#ff3811] hover:bg-[#e13e1d]">
+              Please Confirm
             </button>
           </Link>
+          }
         </td>
       </tr>
     </tbody>
