@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import signUpImage from "../../assets/images/login/login.svg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Share/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const [successful, setServices] = useState(true)
@@ -72,7 +73,7 @@ const SignUp = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password run"
                     name="password"
                     placeholder="password"
                     className="input input-bordered"
@@ -100,9 +101,9 @@ const SignUp = () => {
                   </Link>
                 </p>
               </div>
-              { successful && (
-                <p className="text-center text-sm text-green-600">Successfully Sign Up</p>
-              )}
+              <div>
+                <SocialLogin></SocialLogin>
+              </div>
             </div>
           </div>
         </div>

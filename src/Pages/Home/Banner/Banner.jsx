@@ -21,8 +21,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary bg-[#ff3811] mr-5">Discover More</button>
-                <button className="btn btn-outline  border-[#ff3811] text-white">
+                <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>
@@ -52,8 +52,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+              <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>
@@ -84,8 +84,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+              <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>
@@ -116,8 +116,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+              <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>
@@ -148,8 +148,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+              <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>
@@ -178,8 +178,8 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div>
-                <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+              <button className="btn btn-primary text-white border-[#ff3811] bg-[#ff3811] mr-5 hover:bg-transparent hover:border hover:border-red-600">Discover More</button>
+                <button className="btn btn-outline  border-[#ff3811] text-white hover:bg-[#ff3811]">
                   Latest Project
                 </button>
               </div>

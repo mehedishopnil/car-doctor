@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login/login.svg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Share/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [successful, setSuccessful] = useState(false);
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -16,11 +21,16 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
+        
         console.log(user);
+        navigate(from, { replace: true });
+
         if (user) {
           setSuccessful(true);
           alert("Successfully Logged In ");
-          form.reset();
+          
+
+         
         }
       })
       .catch((error) => console.log(error));
@@ -57,7 +67,7 @@ const Login = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="password"
                     className="input input-bordered"
@@ -85,9 +95,16 @@ const Login = () => {
                   </Link>
                 </p>
               </div>
-              { successful && (
-                <p className="text-center text-sm text-green-600">Successfully logged In</p>
+              {successful && (
+                <p className="text-center text-sm text-green-600">
+                  Successfully logged In
+                </p>
               )}
+
+              
+              <div className="flex justify-center">
+                <SocialLogin></SocialLogin>
+              </div>
             </div>
           </div>
         </div>
